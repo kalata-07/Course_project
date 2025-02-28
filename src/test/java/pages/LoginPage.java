@@ -10,7 +10,7 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage {
     protected WebDriver driver;
 
-    @FindBy(id="user-name")
+    @FindBy(id = "user-name")
     private WebElement usernameInput;
 
     @FindBy(id = "password")
@@ -22,12 +22,12 @@ public class LoginPage {
     @FindBy(className = "error-button")
     private WebElement errorMessage;
 
-    public LoginPage(WebDriver driver){
-        this.driver=driver;
+    public LoginPage(WebDriver driver) {
+        this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    public ProductsPage login(String username, String password){
+    public ProductsPage login(String username, String password) {
         usernameInput.click();
         usernameInput.sendKeys(username);
 
@@ -39,7 +39,7 @@ public class LoginPage {
         return new ProductsPage(driver);
     }
 
-    public void tryToLogin(String username, String password){
+    public void tryToLogin(String username, String password) {
         usernameInput.click();
         usernameInput.sendKeys(username);
 
@@ -50,19 +50,9 @@ public class LoginPage {
 
         try {
             WebElement productsMenu = driver.findElement(By.id("react-burger-menu-btn"));
-        }catch (NoSuchElementException e){
+        } catch (NoSuchElementException e) {
             // Handle the exception if needed
         }
     }
 
-    public boolean isLoginErrorMessageShown(){
-
-  //      try {
-  //          return errorMessage.isDisplayed();
-  //      }catch (NoSuchElementException e){
-   //         // do some logic
-  //         return false;
-  //      }
-        return errorMessage.isDisplayed();
-    }
 }
