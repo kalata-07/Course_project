@@ -3,7 +3,6 @@ package qa.automation;
 import base.TestUtil;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import org.testng.asserts.SoftAssert;
 import pages.LoginPage;
 import pages.ProductsPage;
 
@@ -19,9 +18,6 @@ public class AddItemToTheCart extends TestUtil {
         Assert.assertEquals( productsPage.getItemsInTheCart(),2);
 
         productsPage.removeItemFromTheCart("bike-light");
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(productsPage.getItemsInTheCart(),1);
-        System.out.println("I will be executed");
-        softAssert.assertAll();
+        Assert.assertEquals(productsPage.getItemsInTheCart(),1);
     }
 }
