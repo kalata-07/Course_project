@@ -12,7 +12,7 @@ public class UnsuccessfulRemoveButton extends TestUtil {
         LoginPage loginPage = new LoginPage(driver);
         ProductsPage productsPage = loginPage.login("error_user", "secret_sauce");
         productsPage.addItemToTheCart("backpack");
-        Thread.sleep(5000);
+        //Thread.sleep(5000);
         productsPage.removeItemFromTheCart("backpack");
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertNotEquals(productsPage.getItemsInTheCart(),0);
