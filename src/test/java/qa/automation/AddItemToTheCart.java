@@ -1,14 +1,11 @@
 package qa.automation;
 
 import base.TestUtil;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.LoginPage;
 import pages.ProductsPage;
 
-import java.time.Duration;
 
 public class AddItemToTheCart extends TestUtil {
     @Test

@@ -20,8 +20,6 @@ public class TestUtil {
     @BeforeMethod
     public void setUp() throws IOException {
         setupBrowserDriver();
-//        WebDriverManager.edgedriver().setup();//
-//        driver = new EdgeDriver();
     }
 
     @AfterMethod
