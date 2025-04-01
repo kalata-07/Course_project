@@ -28,7 +28,7 @@ public class TestUtil {
     }
 
     private void setupBrowserDriver() throws IOException {
-        try (FileInputStream configFile = new FileInputStream("src/test/resources/config.prperties")){
+        try (FileInputStream configFile = new FileInputStream("src/test/resources/config.properties")){
 
             Properties config = new Properties();
             config.load(configFile);
